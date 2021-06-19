@@ -7,23 +7,29 @@
     <title>Rooms</title>
 </head>
 <body>
+<center>
 <h3>List of Rooms</h3>
-<table class="table table-dark table-striped table table-bordered border-warning" align="center" style="width: 2000px;">
+    </center>
+    <table class="table table-dark table-striped table table-bordered border-warning" align="center" style="width: 1500px;">
 
     <th>ID</th>
     <th>Name</th>
     <th>Capacity</th>
     <th>Delete</th>
+    <th>Update</th>
     </thead>
     <#list rooms as room>
     <tr>
         <td>${room.id}</td>
         <td>${room.name}</td>
         <td>${room.capacity}</td>
-        <td><button><a href="/ui/rooms/delete/${room.id}">Delete</button></td>
+        <td><a href="/ui/rooms/delete/${room.id}"><button type="button" class="btn btn-danger">Delete</button> </a></td>
+        <td><a href="/ui/rooms/update/${room.id}"><button type="button" class="btn btn-success">Update</button> </a></td>
     </tr>
 </#list>
 </table>
 <center><button><a href="/index.html">Return</a></button></center>
+<center><button><a href="/ui/rooms/renew">reNew</a></button></center>
+<center><button><a href="/ui/rooms/create">Create</a></button></center>
 </body>
 </html>
