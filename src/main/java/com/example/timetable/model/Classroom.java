@@ -2,9 +2,13 @@ package com.example.timetable.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-
+import java.lang.annotation.Documented;
+@Document
 public class Classroom {
+    @Id
     private String id;
     private String name;
     private Integer capacity;

@@ -28,7 +28,7 @@ public class ClassroomWebUIController {
     @RequestMapping("/delete/{id}")
     String delete(Model model, @PathVariable("id") String id) {
         service.delete(id);
-        System.out.println(id);
+        //System.out.println(id);
         model.addAttribute("rooms", service.getAll());
         return "classrooms";
     }

@@ -4,10 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 </head>
 <body>
-<h1>Update new room</h1>
-<div>
+<center>
+    <h3>Update new room</h3>
     <fieldset>
         <form name="room" action="" method="POST">
             field 1 :
@@ -19,7 +20,7 @@
             <input type="submit" value="Update" />
         </form>
     </fieldset>
-</div>
+</center>
 
 </body>
 </html>

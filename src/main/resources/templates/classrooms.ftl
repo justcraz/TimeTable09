@@ -31,5 +31,7 @@
 <center><button><a href="/index.html">Return</a></button></center>
 <center><button><a href="/ui/rooms/renew">reNew</a></button></center>
 <center><button><a href="/ui/rooms/create">Create</a></button></center>
+<br>
+<br>
 </body>
 </html>

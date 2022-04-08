@@ -6,7 +6,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class HelloController {
     @RequestMapping("/hello")
-    String sayHello(){
-        return "<h2 style=\"color: blue\">Hello</h2>";
+    String sayHello (){
+        return "<h2 style=\"color: aqua\">Hell0</h2>" +
+                "<h2 style=\"color: aqua\">H3ll0</h2>" +
+                "<h2 style=\"color: aqua\">H3110</h2>";
     }
 }

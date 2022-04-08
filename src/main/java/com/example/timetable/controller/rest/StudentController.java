@@ -17,23 +17,23 @@ public class StudentController {
     @Autowired
     GroupService service;
 
-    private List<Student> student;
+    private List<Student> students;
 
 
     @PostConstruct
     void init(){
-        student = new ArrayList<>(
+        students = new ArrayList<>(
                 Arrays.asList(
-                        new Student("1" , "Sasha" , service.getGroupById("4")),
-                        new Student("2" , "Vasia" , service.getGroupById("2")),
-                        new Student("3" , "Jamshut" , service.getGroupById("3")),
-                        new Student("4" , "Ashot" , service.getGroupById("1"))
+                        new Student("1" , "Gio" , null),
+                        new Student("2" , "Lox" , service.getGroupById("2")),
+                        new Student("3" , "Pampers" , service.getGroupById("3")),
+                        new Student("4" , "P@blo" , service.getGroupById("1"))
                 )
         );
     }
 
-    @RequestMapping("/student")
+    @RequestMapping("/dauns")
     List<Student> getAll(){
-        return student;
+        return students;
     }
 }

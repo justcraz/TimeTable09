@@ -1,6 +1,8 @@
 package com.example.timetable.services.classroom;
 
 import com.example.timetable.model.Classroom;
+import com.example.timetable.repository.ClassroomRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
@@ -14,6 +16,8 @@ import java.util.stream.Collectors;
 public class ClassroomService {
     private List<Classroom> classrooms;
 
+    @Autowired
+    ClassroomRepository repository;
     @PostConstruct
     void init() {
         classrooms = new ArrayList<>(
@@ -24,38 +28,29 @@ public class ClassroomService {
                         new Classroom("4", "Gym", 50)
                 )
         );
+//        repository.saveAll(classrooms);
+//        classrooms = classrooms;
     }
 
     public List<Classroom> getAll() {
-        return classrooms;
+        return repository.findAll();
     }
     public List<Classroom> reNew(){
         return classrooms=classrooms;
-}
-    public void delete(String id) {
-        classrooms = classrooms .stream().filter(room->!room.getId().equals(id))
-                .collect(Collectors.toList());
+}    public void delete(String id) {
+        repository.deleteById(id);
     }
 
     public void create(Classroom classroom) {
-        String id = UUID.randomUUID().toString();
-        classroom.setId(id);
-        classrooms.add(classroom);
+       repository.save(classroom);
     }
 
     public Classroom get(String id) {
-        Classroom classroom = classrooms.stream()
-                .filter(el -> el.getId().equals(id))
-                .findAny().get();
-        return classroom;
+       return repository.findById(id).get();
     }
 
     public void update(Classroom classroom) {
-        String id = classroom.getId();
-        Classroom room = get(id);
-        int index = classrooms.indexOf(room);
-        classrooms.remove(room);
-        classrooms.add(index,classroom);
+        repository.save(classroom);
     }
 }
 
